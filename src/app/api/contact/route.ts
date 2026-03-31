@@ -1,20 +1,18 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
   port: 587,
-  secure: false, // STARTTLS on port 587
+  secure: false,
   requireTLS: true,
   auth: {
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASS,
-    type: "LOGIN",
   },
-  tls: {
-    rejectUnauthorized: false,
-  },
-});
+  tls: { rejectUnauthorized: false },
+} as any);
 
 export async function POST(req: NextRequest) {
   try {
