@@ -12,6 +12,8 @@ const subjects = [
   "Partnership Inquiry",
 ];
 
+type Status = "idle" | "sending" | "success" | "error";
+
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
@@ -21,13 +23,34 @@ export default function ContactPage() {
     subject: "",
     message: "",
   });
+  const [status, setStatus] = useState<Status>("idle");
+  const [errorMsg, setErrorMsg] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const mailtoLink = `mailto:info@clearfin.ch?subject=${encodeURIComponent(formData.subject || "Website Inquiry")}&body=${encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone || "N/A"}\nCompany: ${formData.company}\n\n${formData.message}`
-    )}`;
-    window.location.href = mailtoLink;
+    setStatus("sending");
+    setErrorMsg("");
+
+    try {
+      const res = await fetch("/clearfintest/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        setStatus("success");
+        setFormData({ name: "", email: "", phone: "", company: "", subject: "", message: "" });
+      } else {
+        setStatus("error");
+        setErrorMsg(data.error || "Something went wrong. Please try again.");
+      }
+    } catch {
+      setStatus("error");
+      setErrorMsg("Network error. Please check your connection and try again.");
+    }
   };
 
   return (
@@ -46,103 +69,136 @@ export default function ContactPage() {
       <section className="py-16 md:py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+
             {/* Contact Form */}
             <div className="lg:col-span-3">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-brand-black mb-1.5">
-                      Name <span className="text-brand-purple">*</span>
-                    </label>
-                    <input
-                      id="name"
-                      type="text"
-                      required
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full border border-lavender rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-brand-purple focus:ring-1 focus:ring-brand-purple"
-                    />
+              {status === "success" ? (
+                <div className="bg-cream-white border border-lavender rounded-xl p-10 text-center">
+                  <div className="w-14 h-14 bg-brand-purple rounded-full flex items-center justify-center mx-auto mb-5">
+                    <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
                   </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-brand-black mb-1.5">
-                      Email <span className="text-brand-purple">*</span>
-                    </label>
-                    <input
-                      id="email"
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full border border-lavender rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-brand-purple focus:ring-1 focus:ring-brand-purple"
-                    />
-                  </div>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-brand-black mb-1.5">
-                      Phone <span className="text-brand-black/40">(optional)</span>
-                    </label>
-                    <input
-                      id="phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full border border-lavender rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-brand-purple focus:ring-1 focus:ring-brand-purple"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="company" className="block text-sm font-medium text-brand-black mb-1.5">
-                      Company <span className="text-brand-purple">*</span>
-                    </label>
-                    <input
-                      id="company"
-                      type="text"
-                      required
-                      value={formData.company}
-                      onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                      className="w-full border border-lavender rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-brand-purple focus:ring-1 focus:ring-brand-purple"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-brand-black mb-1.5">
-                    Subject <span className="text-brand-purple">*</span>
-                  </label>
-                  <select
-                    id="subject"
-                    required
-                    value={formData.subject}
-                    onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                    className="w-full border border-lavender rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-brand-purple focus:ring-1 focus:ring-brand-purple bg-white"
+                  <h3 className="text-xl font-bold text-brand-black mb-2">Message sent!</h3>
+                  <p className="text-brand-black/70 mb-6">Thank you for reaching out. Markus will get back to you shortly.</p>
+                  <button
+                    onClick={() => setStatus("idle")}
+                    className="text-sm text-brand-purple font-medium hover:text-deep-purple"
                   >
-                    <option value="">Select a subject...</option>
-                    {subjects.map((s) => (
-                      <option key={s} value={s}>
-                        {s}
-                      </option>
-                    ))}
-                  </select>
+                    Send another message
+                  </button>
                 </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-brand-black mb-1.5">
-                    Message <span className="text-brand-purple">*</span>
-                  </label>
-                  <textarea
-                    id="message"
-                    required
-                    rows={5}
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full border border-lavender rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-brand-purple focus:ring-1 focus:ring-brand-purple resize-y"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="bg-brand-purple text-white px-8 py-3 rounded-lg text-sm font-semibold hover:bg-deep-purple transition-colors"
-                >
-                  Send Message
-                </button>
-              </form>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-medium text-brand-black mb-1.5">
+                        Name <span className="text-brand-purple">*</span>
+                      </label>
+                      <input
+                        id="name"
+                        type="text"
+                        required
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        className="w-full border border-lavender rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-brand-purple focus:ring-1 focus:ring-brand-purple"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-medium text-brand-black mb-1.5">
+                        Email <span className="text-brand-purple">*</span>
+                      </label>
+                      <input
+                        id="email"
+                        type="email"
+                        required
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        className="w-full border border-lavender rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-brand-purple focus:ring-1 focus:ring-brand-purple"
+                      />
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="phone" className="block text-sm font-medium text-brand-black mb-1.5">
+                        Phone <span className="text-brand-black/40">(optional)</span>
+                      </label>
+                      <input
+                        id="phone"
+                        type="tel"
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        className="w-full border border-lavender rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-brand-purple focus:ring-1 focus:ring-brand-purple"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="company" className="block text-sm font-medium text-brand-black mb-1.5">
+                        Company <span className="text-brand-purple">*</span>
+                      </label>
+                      <input
+                        id="company"
+                        type="text"
+                        required
+                        value={formData.company}
+                        onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                        className="w-full border border-lavender rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-brand-purple focus:ring-1 focus:ring-brand-purple"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label htmlFor="subject" className="block text-sm font-medium text-brand-black mb-1.5">
+                      Subject <span className="text-brand-purple">*</span>
+                    </label>
+                    <select
+                      id="subject"
+                      required
+                      value={formData.subject}
+                      onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                      className="w-full border border-lavender rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-brand-purple focus:ring-1 focus:ring-brand-purple bg-white"
+                    >
+                      <option value="">Select a subject...</option>
+                      {subjects.map((s) => (
+                        <option key={s} value={s}>{s}</option>
+                      ))}
+                    </select>
+                  </div>
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium text-brand-black mb-1.5">
+                      Message <span className="text-brand-purple">*</span>
+                    </label>
+                    <textarea
+                      id="message"
+                      required
+                      rows={5}
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      className="w-full border border-lavender rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-brand-purple focus:ring-1 focus:ring-brand-purple resize-y"
+                    />
+                  </div>
+
+                  {status === "error" && (
+                    <div className="bg-red-50 border border-red-200 rounded-lg px-4 py-3 text-sm text-red-700">
+                      {errorMsg}
+                    </div>
+                  )}
+
+                  <button
+                    type="submit"
+                    disabled={status === "sending"}
+                    className="bg-brand-purple text-white px-8 py-3 rounded-lg text-sm font-semibold hover:bg-deep-purple transition-colors disabled:opacity-60 disabled:cursor-not-allowed flex items-center gap-2"
+                  >
+                    {status === "sending" ? (
+                      <>
+                        <svg className="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                        </svg>
+                        Sending…
+                      </>
+                    ) : "Send Message"}
+                  </button>
+                </form>
+              )}
             </div>
 
             {/* Contact Details */}
