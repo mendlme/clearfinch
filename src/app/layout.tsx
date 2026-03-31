@@ -9,9 +9,9 @@ export const metadata: Metadata = {
     "ClearFin GmbH provides specialist consultants and advisory services for financial institutions. Expertise in Murex, project management, AI consulting, and data engineering. Based in Baar, Switzerland.",
   icons: {
     icon: [
-      { url: "/favicon_16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicon_32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/favicon_64x64.png", sizes: "64x64", type: "image/png" },
+      { url: "/clearfintest/favicon_16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/clearfintest/favicon_32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/clearfintest/favicon_64x64.png", sizes: "64x64", type: "image/png" },
     ],
   },
 };

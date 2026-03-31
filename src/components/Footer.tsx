@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -7,11 +8,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src="/images/02_ClearFin_Dark.svg"
               alt="ClearFin"
+              width={200}
+              height={56}
               className="h-14 w-auto mb-4"
+              unoptimized
             />
             <p className="text-sm text-soft-lilac leading-relaxed mt-4">
               ClearFin GmbH — Specialist consulting for financial institutions.
