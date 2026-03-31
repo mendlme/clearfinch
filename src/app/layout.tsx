@@ -1,10 +1,19 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "ClearFin GmbH – Financial Clarity, Redefined",
+  title: "ClearFin GmbH — Expert Consulting for Trading Systems, AI & Data Management",
   description:
-    "ClearFin GmbH provides transparent financial consulting, compliance, and fintech solutions for modern businesses.",
+    "ClearFin GmbH provides specialist consultants and advisory services for financial institutions. Expertise in Murex, project management, AI consulting, and data engineering. Based in Baar, Switzerland.",
+  icons: {
+    icon: [
+      { url: "/favicon_16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon_32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon_64x64.png", sizes: "64x64", type: "image/png" },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -13,14 +22,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="de">
-      <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body className="antialiased">{children}</body>
+    <html lang="en">
+      <body className="antialiased">
+        <Header />
+        <main>{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }
