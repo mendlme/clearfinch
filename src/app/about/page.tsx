@@ -59,6 +59,7 @@ export default function AboutPage() {
                   className="object-cover object-top"
                   sizes="(max-width: 768px) 100vw, 33vw"
                   priority
+                  unoptimized
                 />
               </div>
               <div className="mt-4 text-center md:text-left">
