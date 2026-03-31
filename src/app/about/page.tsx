@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About ClearFin GmbH — Founded by Markus Endl",
@@ -50,8 +51,15 @@ export default function AboutPage() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
             <div className="md:col-span-1">
-              <div className="bg-gradient-to-br from-brand-purple to-deep-purple rounded-xl aspect-square flex items-center justify-center">
-                <span className="text-6xl font-bold text-cream-white">ME</span>
+              <div className="relative rounded-xl overflow-hidden aspect-[3/4] w-full">
+                <Image
+                  src="/images/markus_endl.jpg"
+                  alt="Markus Endl — Founder & Consultant, ClearFin GmbH"
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  priority
+                />
               </div>
               <div className="mt-4 text-center md:text-left">
                 <h3 className="text-xl font-bold text-brand-black">Markus Endl</h3>
