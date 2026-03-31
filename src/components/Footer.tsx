@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import LogoDark from "@/components/LogoDark";
 
 export default function Footer() {
   return (
@@ -8,14 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div>
-            <Image
-              src="/images/02_ClearFin_Dark.svg"
-              alt="ClearFin"
-              width={200}
-              height={56}
-              className="h-14 w-auto mb-4"
-              unoptimized
-            />
+            <LogoDark className="h-14 w-auto mb-4" />
             <p className="text-sm text-soft-lilac leading-relaxed mt-4">
               ClearFin GmbH — Specialist consulting for financial institutions.
             </p>
