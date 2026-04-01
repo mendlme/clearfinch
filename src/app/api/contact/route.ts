@@ -4,10 +4,8 @@ import nodemailer from "nodemailer";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
-  port: 587,
-  secure: false,
-  requireTLS: true,
-  authMethod: "LOGIN",
+  port: 465,
+  secure: true,
   auth: {
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASS,
