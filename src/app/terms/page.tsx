@@ -45,7 +45,7 @@ export default function TermsPage() {
           <p className="text-brand-black/80 leading-relaxed mb-4">These General Terms and Conditions (<strong className="font-semibold text-brand-black">&ldquo;Terms&rdquo;</strong>) apply to all consulting, advisory, and related services provided by:</p>
           <p className="text-brand-black leading-relaxed mb-4">
             <strong>ClearFin GmbH</strong><br />
-            Blegistrasse 8, 6340 Baar, Switzerland<br />
+            Blegistrasse 7, 6340 Baar, Switzerland<br />
             (<strong>&ldquo;ClearFin&rdquo;</strong>, <strong>&ldquo;we&rdquo;</strong>, or <strong>&ldquo;us&rdquo;</strong>)
           </p>
           <p className="text-brand-black/80 leading-relaxed mb-4">…to any individual, company, or organisation engaging our services (<strong className="font-semibold text-brand-black">&ldquo;Client&rdquo;</strong> or <strong className="font-semibold text-brand-black">&ldquo;you&rdquo;</strong>).</p>

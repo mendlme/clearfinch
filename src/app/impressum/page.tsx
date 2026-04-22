@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Impressum — ClearFin GmbH",
-  description: "Legal disclosure and site notice for ClearFin GmbH, Blegistrasse 8, 6340 Baar, Switzerland.",
+  description: "Legal disclosure and site notice for ClearFin GmbH, Blegistrasse 7, 6340 Baar, Switzerland.",
 };
 
 export default function ImpressumPage() {
@@ -33,15 +33,15 @@ export default function ImpressumPage() {
             </div>
             <div>
               <span className="text-xs uppercase tracking-widest text-mid-purple block mb-1">Registered address</span>
-              <p className="text-brand-black">Blegistrasse 8<br />6340 Baar<br />Switzerland</p>
+              <p className="text-brand-black">Blegistrasse 7<br />6340 Baar<br />Switzerland</p>
             </div>
             <div>
               <span className="text-xs uppercase tracking-widest text-mid-purple block mb-1">Company registration</span>
-              <p className="text-brand-black">Commercial Register of the Canton of Zug<br />UID: CHE-[xxx.xxx.xxx]</p>
+              <p className="text-brand-black">Commercial Register of the Canton of Zug<br />UID: CHE-280.048.888</p>
             </div>
             <div>
               <span className="text-xs uppercase tracking-widest text-mid-purple block mb-1">VAT number</span>
-              <p className="text-brand-black">CHE-[xxx.xxx.xxx] MWST</p>
+              <p className="text-brand-black">CHE-280.048.888 MWST</p>
             </div>
             <div>
               <span className="text-xs uppercase tracking-widest text-mid-purple block mb-1">Managing Director(s)</span>
@@ -73,7 +73,7 @@ export default function ImpressumPage() {
           <p className="text-brand-black/80 leading-relaxed mb-4">The content of this website is the responsibility of ClearFin GmbH. The person responsible for editorial content within the meaning of applicable law is:</p>
           <p className="text-brand-black leading-relaxed mb-4">
             <strong>Markus Endl</strong><br />
-            ClearFin GmbH, Blegistrasse 8, 6340 Baar, Switzerland<br />
+            ClearFin GmbH, Blegistrasse 7, 6340 Baar, Switzerland<br />
             <a href="mailto:info@clearfin.ch" className="text-brand-purple hover:text-deep-purple">info@clearfin.ch</a>
           </p>
 

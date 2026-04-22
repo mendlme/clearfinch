@@ -52,7 +52,7 @@ export async function POST(req: NextRequest) {
             <div style="line-height:1.7;white-space:pre-wrap;">${message.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</div>
           </td></tr>
           <tr><td colspan="2" style="padding:20px 32px;background:#F9F5FF;font-size:12px;color:#9061F9;border-top:1px solid #E9D5FF;">
-            Sent from clearfin.ch contact form · ClearFin GmbH, Blegistrasse 8, 6340 Baar, Switzerland
+            Sent from clearfin.ch contact form · ClearFin GmbH, Blegistrasse 7, 6340 Baar, Switzerland
           </td></tr>
         </table>
       `,

@@ -28,7 +28,7 @@ export default function PrivacyPage() {
           <p className="text-brand-black/80 leading-relaxed mb-4">The data controller responsible for processing your personal data is:</p>
           <p className="text-brand-black leading-relaxed mb-4">
             <strong>ClearFin GmbH</strong><br />
-            Blegistrasse 8, 6340 Baar, Switzerland<br />
+            Blegistrasse 7, 6340 Baar, Switzerland<br />
             Email: <a href="mailto:privacy@clearfin.ch" className="text-brand-purple hover:text-deep-purple">privacy@clearfin.ch</a><br />
             Website: <a href="https://www.clearfin.ch" className="text-brand-purple hover:text-deep-purple">www.clearfin.ch</a>
           </p>

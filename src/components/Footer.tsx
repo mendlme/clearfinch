@@ -57,7 +57,7 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-bold uppercase tracking-wider text-lavender mb-4">Contact</h4>
             <address className="not-italic text-sm text-soft-lilac space-y-2">
-              <p>Blegistrasse 8</p>
+              <p>Blegistrasse 7</p>
               <p>6340 Baar, Switzerland</p>
               <p className="mt-3">
                 <a href="tel:+41783178718" className="hover:text-white transition-colors">
