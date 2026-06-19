@@ -1,19 +1,22 @@
 import { test, expect } from "@playwright/test";
+import { BASE_PATH } from "../playwright.config";
+
+const B = BASE_PATH;
 
 const PAGES = [
-  "/clearfintest",
-  "/clearfintest/services",
-  "/clearfintest/services/trading-applications",
-  "/clearfintest/services/project-management",
-  "/clearfintest/services/data-management",
-  "/clearfintest/services/ai-consulting",
-  "/clearfintest/services/transformations",
-  "/clearfintest/about",
-  "/clearfintest/partners",
-  "/clearfintest/contact",
-  "/clearfintest/impressum",
-  "/clearfintest/privacy",
-  "/clearfintest/terms",
+  B || "/",
+  `${B}/services`,
+  `${B}/services/trading-applications`,
+  `${B}/services/project-management`,
+  `${B}/services/data-management`,
+  `${B}/services/ai-consulting`,
+  `${B}/services/transformations`,
+  `${B}/about`,
+  `${B}/partners`,
+  `${B}/contact`,
+  `${B}/impressum`,
+  `${B}/privacy`,
+  `${B}/terms`,
 ];
 
 for (const path of PAGES) {

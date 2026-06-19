@@ -1,0 +1,64 @@
+name: CI/CD Production
+
+on:
+  push:
+    branches: [prod]
+
+jobs:
+  test:
+    name: Build & Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: |
+          npm run build
+          cp -r .next/static .next/standalone/.next/static
+          cp -r public .next/standalone/public
+        env:
+          NEXT_PUBLIC_BASE_PATH: ""
+
+      - name: Install Playwright browser
+        run: npx playwright install chromium --with-deps
+
+      - name: Run tests
+        run: npx playwright test
+        env:
+          CI: true
+          NEXT_PUBLIC_BASE_PATH: ""
+          PORT: "3000"
+          SMTP_HOST: ${{ secrets.MAILTRAP_HOST }}
+          SMTP_PORT: "2525"
+          SMTP_SECURE: "false"
+          SMTP_USER: ${{ secrets.MAILTRAP_USER }}
+          SMTP_PASS: ${{ secrets.MAILTRAP_PASS }}
+          SMTP_FROM: ${{ secrets.MAILTRAP_FROM }}
+          CONTACT_TO: ${{ secrets.MAILTRAP_TO }}
+
+      - name: Upload test report on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report-prod
+          path: playwright-report/
+          retention-days: 7
+
+  deploy:
+    name: Deploy to VPS (prod)
+    needs: test
+    runs-on: self-hosted
+
+    steps:
+      - name: Deploy
+        run: /var/www/clearfin.ch/app/deploy-prod.sh

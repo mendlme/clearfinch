@@ -1,11 +1,14 @@
 import { test, expect } from "@playwright/test";
+import { BASE_PATH } from "../playwright.config";
+
+const B = BASE_PATH;
 
 const PAGES = [
-  "/clearfintest",
-  "/clearfintest/services",
-  "/clearfintest/about",
-  "/clearfintest/partners",
-  "/clearfintest/contact",
+  B || "/",
+  `${B}/services`,
+  `${B}/about`,
+  `${B}/partners`,
+  `${B}/contact`,
 ];
 
 for (const path of PAGES) {
@@ -13,15 +16,19 @@ for (const path of PAGES) {
     await page.goto(path);
 
     const hrefs = await page
-      .locator('a[href^="/clearfintest"]')
+      .locator('a[href^="/"]')
       .evaluateAll((els) =>
         els.map((el) => el.getAttribute("href")).filter(Boolean)
       );
 
-    const unique = [...new Set(hrefs)] as string[];
+    const prefix = B || "/";
+    const port = process.env.PORT || "3001";
+    const unique = [...new Set(hrefs)].filter(
+      (href) => href!.startsWith(prefix) && !href!.startsWith("//")
+    ) as string[];
 
     for (const href of unique) {
-      const res = await request.get(`http://127.0.0.1:3001${href}`);
+      const res = await request.get(`http://127.0.0.1:${port}${href}`);
       expect(res.status(), `Broken link: ${href} on ${path}`).toBeLessThan(400);
     }
   });

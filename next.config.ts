@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: "standalone",
-  basePath: "/clearfintest",
+  basePath: process.env.NEXT_PUBLIC_BASE_PATH ?? "/clearfintest",
 };
 
 export default nextConfig;
