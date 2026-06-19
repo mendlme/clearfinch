@@ -32,7 +32,7 @@ export default function ContactPage() {
     setErrorMsg("");
 
     try {
-      const res = await fetch("/clearfintest/api/contact", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_PATH ?? "/clearfintest"}/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
