@@ -53,7 +53,7 @@ export default function AboutPage() {
               <div className="relative rounded-xl overflow-hidden aspect-[3/4] w-full">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/clearfintest/images/markus_endl.jpg"
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? "/clearfintest"}/images/markus_endl.jpg`}
                   alt="Markus Endl, Founder & Consultant, ClearFin GmbH"
                   className="w-full h-full object-cover object-top"
                 />
