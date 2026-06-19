@@ -5,7 +5,7 @@ cd /var/www/clearfin.ch/app
 
 git pull origin prod
 npm ci
-npm run build
+NEXT_PUBLIC_BASE_PATH='' npm run build
 cp -r .next/static .next/standalone/.next/static
 cp -r public .next/standalone/public
 sudo systemctl restart clearfinch-prod
