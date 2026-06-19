@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Data Management & Engineering — ClearFin GmbH",
+  title: "Data Management & Engineering | ClearFin GmbH",
   description:
     "Data architecture, reconciliation, and governance for financial institutions. ClearFin GmbH provides data engineers and reconciliation specialists.",
 };
@@ -27,7 +27,7 @@ export default function DataManagementPage() {
             Financial institutions generate vast amounts of data across trading, risk, finance, and operations.
             Making that data consistent, accurate, and accessible is one of the hardest challenges in the industry.
             ClearFin GmbH provides data engineers, architects, and reconciliation specialists who bring order
-            to complexity — and lay the groundwork for AI and advanced analytics.
+            to complexity, laying the groundwork for AI and advanced analytics.
           </p>
         </div>
       </section>
@@ -64,7 +64,7 @@ export default function DataManagementPage() {
             Our partnership with Finbox Solutions gives clients access to EasyRec, a proven real-time
             reconciliation platform used by major European banks including DZ Bank, Nord LB, CA CIB,
             and Natixis. EasyRec handles large data volumes with high throughput, AI-guided matching,
-            and flexible deployment — making it the ideal backbone for data reconciliation in complex environments.
+            and flexible deployment, making it the ideal backbone for data reconciliation in complex environments.
           </p>
         </div>
       </section>
@@ -75,7 +75,7 @@ export default function DataManagementPage() {
           <h2 className="text-2xl md:text-3xl font-bold text-brand-black mb-6">Why ClearFin</h2>
           <p className="text-brand-black/80 leading-relaxed text-lg">
             Data is where our trading expertise, AI capabilities, and reconciliation partnerships converge.
-            We don&apos;t just build pipelines — we understand the business context behind the data, which means
+            We don&apos;t just build pipelines. We understand the business context behind the data, which means
             better architecture, fewer errors, and faster time to value.
           </p>
           <div className="mt-10">

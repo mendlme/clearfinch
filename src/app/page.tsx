@@ -13,7 +13,7 @@ const serviceCards = [
   },
   {
     title: "Project & Program Management",
-    description: "Structured delivery of complex initiatives — on time, on scope, on budget.",
+    description: "Structured delivery of complex initiatives. On time, on scope, on budget.",
     href: "/services/project-management",
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -82,7 +82,7 @@ export default function HomePage() {
             </h1>
             <p className="mt-6 text-lg md:text-xl text-soft-lilac leading-relaxed max-w-2xl">
               ClearFin GmbH connects you with top-tier talent in trading systems, AI, and data management.
-              We deliver the right experts for your most complex challenges — onsite, remote, or hybrid.
+              We deliver the right experts for your most complex challenges: onsite, remote, or hybrid.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
               <Link

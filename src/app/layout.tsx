@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "ClearFin GmbH — Expert Consulting for Trading Systems, AI & Data Management",
+  title: "ClearFin GmbH | Expert Consulting for Trading Systems, AI & Data Management",
   description:
     "ClearFin GmbH provides specialist consultants and advisory services for financial institutions. Expertise in Murex, project management, AI consulting, and data engineering. Based in Baar, Switzerland.",
   icons: {

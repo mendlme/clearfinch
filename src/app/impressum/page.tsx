@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Impressum — ClearFin GmbH",
+  title: "Impressum | ClearFin GmbH",
   description: "Legal disclosure and site notice for ClearFin GmbH, Blegistrasse 7, 6340 Baar, Switzerland.",
 };
 
@@ -82,7 +82,7 @@ export default function ImpressumPage() {
           <p className="text-brand-black/80 leading-relaxed mb-4">This website may contain links to third-party websites. ClearFin GmbH has no influence over the content of those sites and accepts no responsibility for them. The operators of linked pages are solely responsible for their content.</p>
 
           <h2 className="text-xl font-bold text-brand-purple border-b border-lavender pb-3 mb-5 mt-14">Copyright</h2>
-          <p className="text-brand-black/80 leading-relaxed mb-4">All content on this website — including text, graphics, logos, and design — is the property of ClearFin GmbH and is protected by Swiss copyright law. Reproduction, distribution, or use of any content without prior written permission from ClearFin GmbH is prohibited.</p>
+          <p className="text-brand-black/80 leading-relaxed mb-4">All content on this website, including text, graphics, logos, and design, is the property of ClearFin GmbH and is protected by Swiss copyright law. Reproduction, distribution, or use of any content without prior written permission from ClearFin GmbH is prohibited.</p>
 
           <h2 className="text-xl font-bold text-brand-purple border-b border-lavender pb-3 mb-5 mt-14">Dispute Resolution</h2>
           <p className="text-brand-black/80 leading-relaxed mb-4">ClearFin GmbH is not obligated to and does not participate in dispute resolution proceedings before a consumer arbitration board. For any disputes arising from use of this website or our services, the courts of Zug shall have exclusive jurisdiction in accordance with Swiss law.</p>

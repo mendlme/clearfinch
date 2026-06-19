@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — ClearFin GmbH",
+  title: "Privacy Policy | ClearFin GmbH",
   description: "Privacy policy for ClearFin GmbH. We collect only what is necessary, store it securely, and never sell it to third parties.",
 };
 
@@ -41,7 +41,7 @@ export default function PrivacyPage() {
           <ul className="space-y-2 mb-4">
             {["IP address (anonymised after 24 hours)", "Browser type and version", "Pages visited and time of visit", "Referring URL"].map(item => (
               <li key={item} className="flex gap-3 text-brand-black/80">
-                <span className="text-brand-purple font-bold flex-shrink-0">—</span>{item}
+                <span className="text-brand-purple font-bold flex-shrink-0">•</span>{item}
               </li>
             ))}
           </ul>
@@ -50,14 +50,14 @@ export default function PrivacyPage() {
           <h3 className="text-base font-semibold text-brand-black italic mb-2 mt-6">3.2 When you contact us</h3>
           <ul className="space-y-2 mb-4">
             {["Name and email address", "Company name and role (if provided)", "Content of your message"].map(item => (
-              <li key={item} className="flex gap-3 text-brand-black/80"><span className="text-brand-purple font-bold flex-shrink-0">—</span>{item}</li>
+              <li key={item} className="flex gap-3 text-brand-black/80"><span className="text-brand-purple font-bold flex-shrink-0">•</span>{item}</li>
             ))}
           </ul>
 
           <h3 className="text-base font-semibold text-brand-black italic mb-2 mt-6">3.3 When you engage our services</h3>
           <ul className="space-y-2 mb-4">
             {["Contact and billing information", "Communication history", "Data required for contractual performance and invoicing"].map(item => (
-              <li key={item} className="flex gap-3 text-brand-black/80"><span className="text-brand-purple font-bold flex-shrink-0">—</span>{item}</li>
+              <li key={item} className="flex gap-3 text-brand-black/80"><span className="text-brand-purple font-bold flex-shrink-0">•</span>{item}</li>
             ))}
           </ul>
 
@@ -70,7 +70,7 @@ export default function PrivacyPage() {
               ["Legal obligation", "where Swiss law requires us to retain records (e.g. VAT, commercial law)"],
               ["Consent", "where explicitly provided (e.g. newsletter subscription)"],
             ].map(([label, desc]) => (
-              <li key={label} className="flex gap-3 text-brand-black/80"><span className="text-brand-purple font-bold flex-shrink-0">—</span><span><strong className="font-semibold text-brand-black">{label}</strong> – {desc}</span></li>
+              <li key={label} className="flex gap-3 text-brand-black/80"><span className="text-brand-purple font-bold flex-shrink-0">•</span><span><strong className="font-semibold text-brand-black">{label}</strong> – {desc}</span></li>
             ))}
           </ul>
 
@@ -83,7 +83,7 @@ export default function PrivacyPage() {
               "Ensuring the security and integrity of our website",
               "Sending service-related communications",
             ].map(item => (
-              <li key={item} className="flex gap-3 text-brand-black/80"><span className="text-brand-purple font-bold flex-shrink-0">—</span>{item}</li>
+              <li key={item} className="flex gap-3 text-brand-black/80"><span className="text-brand-purple font-bold flex-shrink-0">•</span>{item}</li>
             ))}
           </ul>
 
@@ -95,7 +95,7 @@ export default function PrivacyPage() {
               ["Professional advisors", "lawyers, auditors, and accountants bound by confidentiality obligations"],
               ["Authorities", "where required by Swiss law or a valid court order"],
             ].map(([label, desc]) => (
-              <li key={label} className="flex gap-3 text-brand-black/80"><span className="text-brand-purple font-bold flex-shrink-0">—</span><span><strong className="font-semibold text-brand-black">{label}</strong> – {desc}</span></li>
+              <li key={label} className="flex gap-3 text-brand-black/80"><span className="text-brand-purple font-bold flex-shrink-0">•</span><span><strong className="font-semibold text-brand-black">{label}</strong> – {desc}</span></li>
             ))}
           </ul>
           <p className="text-brand-black/80 leading-relaxed mb-4">Any third-party processors are contractually required to handle your data in accordance with applicable data protection law.</p>
@@ -111,7 +111,7 @@ export default function PrivacyPage() {
               ["Client and contract data", "10 years from end of contract (Swiss Code of Obligations, Art. 958f)"],
               ["Invoice records", "10 years (Swiss VAT law)"],
             ].map(([label, desc]) => (
-              <li key={label} className="flex gap-3 text-brand-black/80"><span className="text-brand-purple font-bold flex-shrink-0">—</span><span><strong className="font-semibold text-brand-black">{label}:</strong> {desc}</span></li>
+              <li key={label} className="flex gap-3 text-brand-black/80"><span className="text-brand-purple font-bold flex-shrink-0">•</span><span><strong className="font-semibold text-brand-black">{label}:</strong> {desc}</span></li>
             ))}
           </ul>
 
@@ -127,7 +127,7 @@ export default function PrivacyPage() {
               ["Objection", "object to processing based on legitimate interest"],
               ["Withdraw consent", "at any time, without affecting the lawfulness of prior processing"],
             ].map(([label, desc]) => (
-              <li key={label} className="flex gap-3 text-brand-black/80"><span className="text-brand-purple font-bold flex-shrink-0">—</span><span><strong className="font-semibold text-brand-black">{label}</strong> – {desc}</span></li>
+              <li key={label} className="flex gap-3 text-brand-black/80"><span className="text-brand-purple font-bold flex-shrink-0">•</span><span><strong className="font-semibold text-brand-black">{label}</strong> – {desc}</span></li>
             ))}
           </ul>
           <p className="text-brand-black/80 leading-relaxed mb-4">To exercise any of these rights, please contact us at <a href="mailto:privacy@clearfin.ch" className="text-brand-purple hover:text-deep-purple">privacy@clearfin.ch</a>. We will respond within 30 days.</p>

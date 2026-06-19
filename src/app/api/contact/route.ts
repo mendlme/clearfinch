@@ -25,11 +25,11 @@ export async function POST(req: NextRequest) {
       from: `"ClearFin Website" <${process.env.SMTP_FROM}>`,
       to: process.env.CONTACT_TO,
       replyTo: email,
-      subject: `[ClearFin] ${subject} — ${name} (${company})`,
+      subject: `[ClearFin] ${subject}: ${name} (${company})`,
       text: [
         `Name:    ${name}`,
         `Email:   ${email}`,
-        `Phone:   ${phone || "—"}`,
+        `Phone:   ${phone || "n/a"}`,
         `Company: ${company}`,
         `Subject: ${subject}`,
         ``,
@@ -44,7 +44,7 @@ export async function POST(req: NextRequest) {
           </td></tr>
           <tr style="background:#F9F5FF;"><td style="padding:14px 32px;font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#9061F9;width:120px;">Name</td><td style="padding:14px 32px;">${name}</td></tr>
           <tr><td style="padding:14px 32px;font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#9061F9;">Email</td><td style="padding:14px 32px;"><a href="mailto:${email}" style="color:#7C3AED;">${email}</a></td></tr>
-          <tr style="background:#F9F5FF;"><td style="padding:14px 32px;font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#9061F9;">Phone</td><td style="padding:14px 32px;">${phone || "—"}</td></tr>
+          <tr style="background:#F9F5FF;"><td style="padding:14px 32px;font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#9061F9;">Phone</td><td style="padding:14px 32px;">${phone || "n/a"}</td></tr>
           <tr><td style="padding:14px 32px;font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#9061F9;">Company</td><td style="padding:14px 32px;">${company}</td></tr>
           <tr style="background:#F9F5FF;"><td style="padding:14px 32px;font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#9061F9;">Subject</td><td style="padding:14px 32px;">${subject}</td></tr>
           <tr><td colspan="2" style="padding:24px 32px;border-top:1px solid #E9D5FF;">

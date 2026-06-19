@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import ServicePageLayout from "@/components/ServicePageLayout";
 
 export const metadata: Metadata = {
-  title: "Large-Scale Transformations — ClearFin GmbH",
+  title: "Large-Scale Transformations | ClearFin GmbH",
   description:
     "End-to-end guidance through system migrations, mergers, and organisational change for financial institutions.",
 };
@@ -22,7 +22,7 @@ export default function TransformationsPage() {
         "Data migration and reconciliation (with Finbox Solutions EasyRec)",
         "QA strategy, test automation, and non-regression testing (with Sinext Consulting)",
       ]}
-      whyClearfin="Transformation is where everything we do comes together — trading expertise, project management discipline, data quality, QA assurance, and increasingly, AI-powered automation. We don't just manage the plan; we provide the specialists who do the work."
+      whyClearfin="Transformation is where everything we do comes together: trading expertise, project management discipline, data quality, QA assurance, and increasingly, AI-powered automation. We don't just manage the plan; we provide the specialists who do the work."
     />
   );
 }

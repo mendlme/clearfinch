@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Strategic Partners — ClearFin GmbH",
+  title: "Strategic Partners | ClearFin GmbH",
   description:
     "ClearFin GmbH partners with Finbox Solutions, Sinext Consulting, and other industry leaders to deliver integrated consulting, data reconciliation, and QA testing solutions for financial institutions.",
 };
@@ -14,7 +14,7 @@ const deliverables = [
   "AI-enhanced data quality and matching workflows",
   "End-to-end QA strategy and test automation for platform implementations",
   "Nearshore testing delivery for cost-effective, scalable quality assurance",
-  "Comprehensive Murex testing — from initial implementation to upgrades and beyond",
+  "Comprehensive Murex testing: from initial implementation to upgrades and beyond",
 ];
 
 export default function PartnersPage() {
@@ -36,7 +36,7 @@ export default function PartnersPage() {
           <p className="text-brand-black/80 leading-relaxed text-lg">
             ClearFin GmbH believes the best outcomes come from combining deep expertise across
             complementary domains. Our partnerships extend our capabilities and give clients access
-            to best-in-class tools and talent — without the complexity of managing multiple vendors.
+            to best-in-class tools and talent, without the complexity of managing multiple vendors.
           </p>
         </div>
       </section>
@@ -50,7 +50,7 @@ export default function PartnersPage() {
               <div className="flex-1">
                 <h2 className="text-2xl font-bold text-brand-black mb-1">Finbox Solutions</h2>
                 <p className="text-sm text-mid-purple mb-4">Data Reconciliation Software &middot; France &middot; Founded 2013</p>
-                <p className="text-sm font-semibold text-brand-purple mb-3">Key Product: EasyRec — Real-time reconciliation platform</p>
+                <p className="text-sm font-semibold text-brand-purple mb-3">Key Product: EasyRec | Real-time reconciliation platform</p>
                 <p className="text-brand-black/80 leading-relaxed mb-4">
                   Finbox Solutions is a French FinTech company specialising in data migrations, integrations,
                   and reconciliations for financial institutions undergoing large-scale IT transformations.
@@ -60,7 +60,7 @@ export default function PartnersPage() {
                 <div className="bg-cream-white rounded-lg p-4 border border-lavender">
                   <p className="text-sm font-semibold text-brand-purple mb-1">Why this partnership matters</p>
                   <p className="text-sm text-brand-black/70 leading-relaxed">
-                    Data reconciliation sits at the intersection of everything ClearFin does — trading system
+                    Data reconciliation sits at the intersection of everything ClearFin does: trading system
                     migrations, transformation programmes, data management, and AI-driven automation. Finbox
                     Solutions&apos; EasyRec platform, with its AI-guided matching and high-throughput processing,
                     is the ideal complement to our consulting services.
@@ -92,7 +92,7 @@ export default function PartnersPage() {
                   Sinext Consulting is a French consulting firm specialising in software quality assurance
                   and testing. With over 10 years of experience, 30+ certified testing specialists, and
                   more than 100 missions completed across 9 countries, Sinext delivers industrial-grade
-                  testing solutions for complex environments — including capital markets platforms such as Murex.
+                  testing solutions for complex environments, including capital markets platforms such as Murex.
                 </p>
                 <p className="text-brand-black/70 leading-relaxed text-sm mb-4">
                   Sinext&apos;s services span the full QA lifecycle: from test strategy diagnostics and
@@ -105,8 +105,8 @@ export default function PartnersPage() {
                   <p className="text-sm text-brand-black/70 leading-relaxed">
                     Quality assurance is critical to every system migration, platform upgrade, and transformation
                     programme ClearFin delivers. Sinext Consulting&apos;s expertise in test automation,
-                    non-regression testing, and QA strategy — particularly for Murex and capital markets
-                    platforms — makes them the ideal partner to ensure that our clients&apos; deployments are
+                    non-regression testing, and QA strategy, particularly for Murex and capital markets
+                    platforms, makes them the ideal partner to ensure that our clients&apos; deployments are
                     thoroughly validated, production-ready, and risk-free.
                   </p>
                 </div>

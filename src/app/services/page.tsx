@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Our Services — ClearFin GmbH",
+  title: "Our Services | ClearFin GmbH",
   description:
     "Explore ClearFin's consulting services: trading application specialists, project management, large-scale transformations, AI advisory, and data management for financial institutions.",
 };
@@ -23,7 +23,7 @@ const services = [
   {
     title: "Large-Scale Transformations",
     description:
-      "System migrations, regulatory programmes, post-merger integration — we guide organisations through high-stakes change with minimal disruption and lasting impact.",
+      "System migrations, regulatory programmes, post-merger integration: we guide organisations through high-stakes change with minimal disruption and lasting impact.",
     href: "/services/transformations",
   },
   {
@@ -47,7 +47,7 @@ const howWeWork = [
   },
   {
     title: "Flexible engagement",
-    description: "Onsite, remote, or hybrid — single consultants or full teams.",
+    description: "Onsite, remote, or hybrid. Single consultants or full teams.",
   },
   {
     title: "Domain depth",
@@ -107,7 +107,7 @@ export default function ServicesPage() {
           <div className="max-w-3xl">
             <h2 className="text-3xl md:text-4xl font-bold text-brand-black mb-6">How We Work</h2>
             <p className="text-brand-black/70 leading-relaxed mb-10">
-              ClearFin GmbH operates as a specialist talent partner. We don&apos;t just advise — we embed
+              ClearFin GmbH operates as a specialist talent partner. We don&apos;t just advise, we embed
               highly skilled professionals directly into your organisation. Our consultants work as an
               extension of your team, bringing deep domain expertise from day one.
             </p>

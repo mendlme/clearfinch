@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions — ClearFin GmbH",
+  title: "Terms & Conditions | ClearFin GmbH",
   description: "General terms and conditions governing all consulting and advisory engagements with ClearFin GmbH.",
 };
 
 function Li({ children }: { children: React.ReactNode }) {
   return (
     <li className="flex gap-3 text-brand-black/80">
-      <span className="text-brand-purple font-bold flex-shrink-0">—</span>
+      <span className="text-brand-purple font-bold flex-shrink-0">•</span>
       <span>{children}</span>
     </li>
   );

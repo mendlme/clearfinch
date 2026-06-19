@@ -61,7 +61,7 @@ export default function ContactPage() {
           <h1 className="text-3xl md:text-5xl font-bold text-cream-white">Get in Touch</h1>
           <p className="mt-4 text-lg text-soft-lilac max-w-2xl">
             Whether you&apos;re looking for specialist talent, exploring AI opportunities, or planning
-            a transformation — we&apos;d love to hear from you.
+            a transformation. We&apos;d love to hear from you.
           </p>
         </div>
       </section>

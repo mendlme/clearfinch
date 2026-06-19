@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About ClearFin GmbH — Founded by Markus Endl",
+  title: "About ClearFin GmbH | Founded by Markus Endl",
   description:
     "ClearFin GmbH is a Swiss consulting firm founded by Markus Endl, specialising in placing expert talent in banking, reconciliation, AI, and advisory services.",
 };
@@ -33,7 +33,7 @@ export default function AboutPage() {
           <p className="text-brand-black/80 leading-relaxed text-lg mb-6">
             ClearFin GmbH is a Swiss consulting firm based in Baar, specialising in providing top-tier
             talent and advisory services to financial institutions. We operate at the intersection of
-            trading technology, data management, and artificial intelligence — helping banks and capital
+            trading technology, data management, and artificial intelligence, helping banks and capital
             markets firms navigate complex challenges with the right expertise at the right time.
           </p>
           <p className="text-brand-black/80 leading-relaxed text-lg">
@@ -54,7 +54,7 @@ export default function AboutPage() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/clearfintest/images/markus_endl.jpg"
-                  alt="Markus Endl — Founder & Consultant, ClearFin GmbH"
+                  alt="Markus Endl, Founder & Consultant, ClearFin GmbH"
                   className="w-full h-full object-cover object-top"
                 />
               </div>
@@ -73,17 +73,17 @@ export default function AboutPage() {
               </p>
               <p className="text-brand-black/80 leading-relaxed text-lg mb-8">
                 ClearFin reflects Markus&apos;s conviction that the best consulting outcomes come from
-                placing the right people in the right roles — not from scaling headcount. Every
+                placing the right people in the right roles, not from scaling headcount. Every
                 consultant in the ClearFin network is personally vetted for domain expertise,
                 delivery capability, and cultural fit.
               </p>
               <blockquote className="border-l-4 border-brand-purple pl-6 py-2">
                 <p className="text-brand-black/80 italic leading-relaxed">
                   &ldquo;I founded ClearFin because I believe financial institutions deserve better access to
-                  specialist talent — people who understand the technology, the regulation, and the business.
+                  specialist talent: people who understand the technology, the regulation, and the business.
                   That&apos;s what we deliver.&rdquo;
                 </p>
-                <cite className="block mt-2 text-sm text-mid-purple not-italic">— Markus Endl, Founder</cite>
+                <cite className="block mt-2 text-sm text-mid-purple not-italic">Markus Endl, Founder</cite>
               </blockquote>
             </div>
           </div>
@@ -96,7 +96,7 @@ export default function AboutPage() {
           <h2 className="text-2xl md:text-3xl font-bold text-brand-black mb-4">Our Network, Your Team</h2>
           <p className="text-brand-black/80 leading-relaxed text-lg mb-8">
             ClearFin GmbH doesn&apos;t maintain a large bench of idle consultants. Instead, we operate
-            a curated network of specialists — professionals with proven track records at leading
+            a curated network of specialists: professionals with proven track records at leading
             financial institutions across Europe. When you engage ClearFin, you get:
           </p>
           <ul className="space-y-4 mb-10">

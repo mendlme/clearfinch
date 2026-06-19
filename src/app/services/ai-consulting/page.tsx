@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "AI Consulting & Advisory for Financial Services — ClearFin GmbH",
+  title: "AI Consulting & Advisory for Financial Services | ClearFin GmbH",
   description:
     "AI strategy, process automation, and intelligent data solutions for banks and capital markets. ClearFin GmbH helps financial institutions move from AI experimentation to real impact.",
 };
@@ -11,12 +11,12 @@ const subSections = [
   {
     title: "AI Strategy & Readiness",
     description:
-      "We assess where AI can deliver genuine value in your organisation — not just what's technically possible, but what's operationally practical. Our assessments cover data readiness, infrastructure, skills, and governance.",
+      "We assess where AI can deliver genuine value in your organisation: not just what's technically possible, but what's operationally practical. Our assessments cover data readiness, infrastructure, skills, and governance.",
   },
   {
     title: "AI-Powered Process Automation",
     description:
-      "We identify and automate high-value manual processes using AI and machine learning — reconciliation workflows, exception handling, report generation, compliance checks, and more. Our approach prioritises measurable ROI and seamless integration with existing systems.",
+      "We identify and automate high-value manual processes using AI and machine learning: reconciliation workflows, exception handling, report generation, compliance checks, and more. Our approach prioritises measurable ROI and seamless integration with existing systems.",
   },
   {
     title: "Intelligent Data Solutions",
@@ -38,7 +38,7 @@ export default function AIConsultingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
           <h1 className="text-3xl md:text-5xl font-bold text-cream-white">AI Consulting & Advisory</h1>
           <p className="mt-4 text-lg text-soft-lilac max-w-2xl">
-            Helping financial institutions harness artificial intelligence — from strategy to production.
+            Helping financial institutions harness artificial intelligence, from strategy to production.
           </p>
         </div>
       </section>
@@ -47,7 +47,7 @@ export default function AIConsultingPage() {
       <section className="py-16 md:py-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-brand-black/80 leading-relaxed text-lg">
-            Artificial intelligence is reshaping financial services — from automated reconciliation and anomaly
+            Artificial intelligence is reshaping financial services, from automated reconciliation and anomaly
             detection to intelligent document processing and predictive analytics. But most organisations
             struggle to move from experimentation to real impact. ClearFin GmbH bridges that gap with
             practical AI strategy, hands-on implementation support, and deep domain knowledge in banking
@@ -78,7 +78,7 @@ export default function AIConsultingPage() {
           <p className="text-brand-black/80 leading-relaxed text-lg">
             We combine AI expertise with deep banking domain knowledge. That means we understand not
             just the technology, but the regulatory constraints, data complexities, and operational
-            realities of deploying AI in financial services. We don&apos;t sell tools — we solve problems.
+            realities of deploying AI in financial services. We don&apos;t sell tools. We solve problems.
           </p>
           <div className="mt-10">
             <Link

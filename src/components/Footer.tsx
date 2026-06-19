@@ -10,7 +10,7 @@ export default function Footer() {
           <div>
             <LogoDark className="h-14 w-auto mb-4" />
             <p className="text-sm text-soft-lilac leading-relaxed mt-4">
-              ClearFin GmbH — Specialist consulting for financial institutions.
+              ClearFin GmbH. Specialist consulting for financial institutions.
             </p>
           </div>
 
