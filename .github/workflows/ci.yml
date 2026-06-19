@@ -37,6 +37,8 @@ jobs:
         env:
           CI: true
           SMTP_HOST: ${{ secrets.MAILTRAP_HOST }}
+          SMTP_PORT: "2525"
+          SMTP_SECURE: "false"
           SMTP_USER: ${{ secrets.MAILTRAP_USER }}
           SMTP_PASS: ${{ secrets.MAILTRAP_PASS }}
           SMTP_FROM: ${{ secrets.MAILTRAP_FROM }}
